@@ -18,7 +18,7 @@
     <% @prospects.each do |prospect| %>
       <tr>
         <td><%= prospect.job_title %></td>
-        <td><%= prospect.link %></td>
+        <td><a href='<%= prospect.link %>'> <%=prospect.link %></a></td>
         <td><%= prospect.technologies %></td>
         <td><%= prospect.location %></td>
         <td><%= prospect.comment %></td>
