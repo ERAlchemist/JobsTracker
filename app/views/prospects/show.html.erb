@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @prospect.job_title %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @prospect.link %>
+</p>
+
+<p>
+  <strong>Technologies:</strong>
+  <%= @prospect.technologies %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @prospect.location %>
+</p>
+
+<p>
+  <strong>Listing site:</strong>
+  <%= @prospect.listing_site %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @prospect.comment %>
+</p>
+
+<%= link_to 'Edit', edit_prospect_path(@prospect) %> |
+<%= link_to 'Back', prospects_path %>

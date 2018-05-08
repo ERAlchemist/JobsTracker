@@ -1,0 +1,55 @@
+<div class="uk-background-muted">
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+</div>
+<div class="uk-background-muted">
+<table class="uk-table">
+  <thead >
+    <tr>
+      <th>Job title</th>
+      <th>Link</th>
+      <th>Comment</th>
+      <th>Date applied</th>
+      <th>Heard back</th>
+      
+      <th>Cover letter used</th>
+      <th>Resume used</th>
+      <th>Listing site</th>
+      <th>Technologies</th>
+      <th>Remote possible</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<hr class="uk-divider">
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr style="border-bottom: 1px solid #222">
+      <td><%= job.job_title %></td>
+        <td> <a href=<%=job.link %>><%=job.link%></a></td>
+        <td><%= job.comment %></td>
+        <td><%= job.date_applied %></td>
+        <td><%= job.heard_back %></td>
+        <td><%= job.cover_letter_used %></td>
+        <td><%= job.resume_used %></td>
+        <td><%= job.listing_site %></td>
+        <td><%= job.technologies %></td>
+        <td><%= job.remote_possible %></td>
+        <td><%= job.location %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+      </tr>
+      
+    <% end %>
+    
+  </tbody>
+ 
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>
+</div>

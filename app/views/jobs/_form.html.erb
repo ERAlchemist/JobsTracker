@@ -1,0 +1,72 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_applied %>
+    <%= form.date_select :date_applied %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heard_back %>
+    <%= form.check_box :heard_back %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_title %>
+    <%= form.text_field :job_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover_letter_used %>
+    <%= form.text_field :cover_letter_used %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resume_used %>
+    <%= form.text_field :resume_used %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_site %>
+    <%= form.text_field :listing_site %>
+  </div>
+
+  <div class="field">
+    <%= form.label :technologies %>
+    <%= form.text_area :technologies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remote_possible %>
+    <%= form.check_box :remote_possible %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

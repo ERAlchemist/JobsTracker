@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_title: MyString
+  link: MyString
+  date_applied: 2018-05-07
+  cover_letter_used: MyString
+  reume_used: MyString
+  listing_site: MyString
+  technologies: MyText
+  remote_possible: false
+  location: MyString
+  heard_back: false
+  comment: MyText
+
+two:
+  job_title: MyString
+  link: MyString
+  date_applied: 2018-05-07
+  cover_letter_used: MyString
+  reume_used: MyString
+  listing_site: MyString
+  technologies: MyText
+  remote_possible: false
+  location: MyString
+  heard_back: false
+  comment: MyText
