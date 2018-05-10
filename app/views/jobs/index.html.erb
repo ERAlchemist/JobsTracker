@@ -26,7 +26,7 @@
     <% @jobs.each do |job| %>
       <tr style="border-bottom: 1px solid #222">
 
-        <td> <a href=<%=job.link %>><%=job.link%><%= job.job_title %></a></td>
+        <td> <a href=<%=job.link %>><%= job.job_title %></a></td>
         <td><%= job.comment %></td>
         <td><%= job.date_applied %></td>
         <td><%= job.heard_back %></td>
