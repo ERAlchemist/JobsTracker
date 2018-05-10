@@ -33,7 +33,7 @@
           <td class="uk-text-large"><%= job.remote_possible %></td>
           <td class="uk-text-large"><%= job.location %></td>
           <td>
-            <span>
+            <span class="uk-text-large">
               <%= link_to 'Edit', edit_job_path(job) %> |
               <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %>
             </span>
@@ -49,4 +49,4 @@
 </div>
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+<a class="uk-text-large" href="/jobs/new">New Job</a>
