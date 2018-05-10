@@ -10,7 +10,6 @@
         <th style="font-size: 1.4em; font-weight: bold">Comment</th>
         <th style="font-size: 1.4em; font-weight: bold">Date applied</th>
         <th style="font-size: 1.4em; font-weight: bold">Heard back</th>
-        
         <th style="font-size: 1.4em; font-weight: bold">Cover letter used</th>
         <th style="font-size: 1.4em; font-weight: bold">Resume used</th>
         <th style="font-size: 1.4em; font-weight: bold">Listing site</th>
@@ -20,21 +19,19 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-  <hr class="uk-divider">
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-
           <td> <a class="uk-text-large" href=<%=job.link %>><%= job.job_title %></a></td>
-          <td><%= job.comment %></td>
-          <td><%= job.date_applied %></td>
-          <td><%= job.heard_back %></td>
-          <td><%= job.cover_letter_used %></td>
-          <td><%= job.resume_used %></td>
-          <td><%= job.listing_site %></td>
-          <td><%= job.technologies %></td>
-          <td><%= job.remote_possible %></td>
-          <td><%= job.location %></td>
+          <td class="uk-text-large"><%= job.comment %></td>
+          <td class="uk-text-large"><%= job.date_applied %></td>
+          <td class="uk-text-large"><%= job.heard_back %></td>
+          <td class="uk-text-large"><%= job.cover_letter_used %></td>
+          <td class="uk-text-large"><%= job.resume_used %></td>
+          <td class="uk-text-large"><%= job.listing_site %></td>
+          <td class="uk-text-large"><%= job.technologies %></td>
+          <td class="uk-text-large"><%= job.remote_possible %></td>
+          <td class="uk-text-large"><%= job.location %></td>
           <td>
             <span>
               <%= link_to 'Edit', edit_job_path(job) %> |
