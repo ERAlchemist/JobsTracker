@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Job title</th>
-      <th>Link</th>
       <th>Technologies</th>
       <th>Location</th>
       <th>Comment</th>
@@ -17,8 +16,8 @@
   <tbody>
     <% @prospects.each do |prospect| %>
       <tr>
-        <td><%= prospect.job_title %></td>
-        <td><a href='<%= prospect.link %>'> <%=prospect.link %></a></td>
+       
+        <td><a href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
         <td><%= prospect.technologies %></td>
         <td><%= prospect.location %></td>
         <td><%= prospect.comment %></td>
