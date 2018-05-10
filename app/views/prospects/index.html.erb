@@ -2,13 +2,13 @@
 
 <h1>Prospects</h1>
 
-<table class="uk-table">
+<table class="uk-table uk-table-divider">
   <thead>
     <tr>
-      <th>Job title</th>
-      <th>Technologies</th>
-      <th>Location</th>
-      <th>Comment</th>
+      <th style="font-size: 2.2em; font-weight: bold">Job title</th>
+      <th style="font-size: 2.2em; font-weight: bold">Technologies</th>
+      <th style="font-size: 2.2em; font-weight: bold">Location</th>
+      <th style="font-size: 2.2em; font-weight: bold">Comment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,13 +17,17 @@
     <% @prospects.each do |prospect| %>
       <tr>
        
-        <td><a href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
-        <td><%= prospect.technologies %></td>
-        <td><%= prospect.location %></td>
-        <td><%= prospect.comment %></td>
-        <td><%= link_to 'Show', prospect %></td>
-        <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
-        <td><%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a class="uk-text-large" href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
+        <td class="uk-text-large"><%= prospect.technologies %></td>
+        <td class="uk-text-large"><%= prospect.location %></td>
+        <td class="uk-text-large"><%= prospect.comment %></td>
+        <td>
+          <span>
+              <%= link_to 'Edit', edit_prospect_path(prospect) %> |
+              <%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %> |
+              <%= link_to 'Move to Applied', move_to_applied_prospect_path(prospect), method: :patch %>
+          </span>
+        </td>
       </tr>
     <% end %>
   </tbody>

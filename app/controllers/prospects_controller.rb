@@ -1,5 +1,5 @@
 class ProspectsController < ApplicationController
-  before_action :set_prospect, only: [:show, :edit, :update, :destroy]
+  before_action :set_prospect, only: [:show, :edit, :update, :destroy, :move_to_applied]
 
   # GET /prospects
   # GET /prospects.json
@@ -28,8 +28,8 @@ class ProspectsController < ApplicationController
 
     respond_to do |format|
       if @prospect.save
-        format.html { redirect_to @prospect, notice: 'Prospect was successfully created.' }
-        format.json { render :show, status: :created, location: @prospect }
+        format.html { redirect_to prospects_url, notice: 'Prospect was successfully created.' }
+        format.json { render :index, status: :created, location: @prospect }
       else
         format.html { render :new }
         format.json { render json: @prospect.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class ProspectsController < ApplicationController
   def update
     respond_to do |format|
       if @prospect.update(prospect_params)
-        format.html { redirect_to @prospect, notice: 'Prospect was successfully updated.' }
-        format.json { render :show, status: :ok, location: @prospect }
+        format.html { redirect_to prospects_url, notice: 'Prospect was successfully updated.' }
+        format.json { render :index, status: :ok, location: @prospect }
       else
         format.html { render :edit }
         format.json { render json: @prospect.errors, status: :unprocessable_entity }
@@ -59,6 +59,15 @@ class ProspectsController < ApplicationController
       format.html { redirect_to prospects_url, notice: 'Prospect was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def move_to_applied
+    @job = Job.new(:job_title => @prospect.job_title, :link => @prospect.link, :comment => @prospect.comment, :technologies => @prospect.technologies, :location => @prospect.location)
+
+     @job.save
+    @prospect.destroy
+    redirect_to jobs_url
+   
   end
 
   private
