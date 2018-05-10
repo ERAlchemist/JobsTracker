@@ -16,6 +16,7 @@
         <th style="font-size: 1.4em; font-weight: bold">Technologies</th>
         <th style="font-size: 1.4em; font-weight: bold">Remote possible</th>
         <th style="font-size: 1.4em; font-weight: bold">Location</th>
+        <th style="font-size: 1.4em: font-weight: bold"></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -33,14 +34,22 @@
           <td class="uk-text-large"><%= job.remote_possible %></td>
           <td class="uk-text-large"><%= job.location %></td>
           <td>
-            <span class="uk-text-large">
-              <%= link_to 'Edit', edit_job_path(job) %> |
-              <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </span>
-          </td>
-        
+            
+                <div class="links">
+                  <div class="edit" uk-tooltip="title: Edit Details">
+                    <%= link_to edit_job_path(job), method: :edit do %> 
+                      <%= image_tag('edit.svg') %>
+                    <% end %>
+                  </div>
+                  <div class="trash" uk-tooltip="title: Delete Job">
+                    <%= link_to  job, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <%= image_tag('trash.svg') %>
+                    <% end %>
+                  </div>
+                </div>
+           
+           </td>
         </tr>
-        
       <% end %>
       
     </tbody>
@@ -49,4 +58,4 @@
 </div>
 <br>
 
-<a class="uk-text-large" href="/jobs/new">New Job</a>
+<a class="new" href="/jobs/new"><%= image_tag('Add-32.png') %> New Job</a>
