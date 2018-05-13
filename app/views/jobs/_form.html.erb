@@ -1,4 +1,4 @@
-<%= form_with(model: job, local: true) do |form| %>
+<%= form_with(model: job, local: true, class: "uk-form-horizontal uk-margin-large") do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -11,62 +11,70 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date_applied %>
-    <%= form.date_select :date_applied %>
-  </div>
-
-  <div class="field">
-    <%= form.label :heard_back %>
-    <%= form.check_box :heard_back %>
-  </div>
-
-  <div class="field">
-    <%= form.label :job_title %>
+  <div class="uk-margin">
+   <%= form.label(:job_title, {}, {class: 'uk-form-label'}) %>
     <%= form.text_field :job_title %>
   </div>
 
-  <div class="field">
-    <%= form.label :cover_letter_used %>
-    <%= form.text_field :cover_letter_used %>
+  <div class="uk-margin">
+    <%= form.label(:link, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_field :link %>
   </div>
 
-  <div class="field">
-    <%= form.label :resume_used %>
-    <%= form.text_field :resume_used %>
-  </div>
-
-  <div class="field">
-    <%= form.label :listing_site %>
-    <%= form.text_field :listing_site %>
-  </div>
-
-  <div class="field">
-    <%= form.label :technologies %>
+  <div class="uk-margin">
+     <%= form.label(:technologies, {}, {class: 'uk-form-label'}) %>
     <%= form.text_area :technologies %>
   </div>
 
-  <div class="field">
-    <%= form.label :remote_possible %>
-    <%= form.check_box :remote_possible %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
+ <div class="uk-margin">
+    <%= form.label(:location, {}, {class: 'uk-form-label'}) %>
     <%= form.text_field :location %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+ <div class="uk-margin">
+    <%= form.label(:comment, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_area :comment %>
+  </div>
+
+ <div class="uk-margin">
+    <%= form.label(:rating, {}, {class: 'uk-form-label'}) %>
+    <%= form.select( :rating, [1,2,3,4,5], {}, {class: 'uk-select-width-medium', id: 'form-horizontal-select'} )  %>
+  </div>
+
+  <div class="uk-margin">
+    <%= form.label(:date_applied, {}, {class: 'uk-form-label'}) %>
+    <%= form.date_select :date_applied %>
+  </div>
+
+  <div class="uk-margin">
+     <%= form.label(:heard_back, {}, {class: 'uk-form-label'}) %>
+    <%= form.check_box :heard_back %>
+  </div>
+
+
+  <div class="uk-margin">
+     <%= form.label(:cover_letter_used, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_field :cover_letter_used %>
+  </div>
+
+  <div class="uk-margin">
+     <%= form.label(:resume_used, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_field :resume_used %>
+  </div>
+
+  <div class="uk-margin">
+     <%= form.label(:listing_site, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_field :listing_site %>
+  </div>
+
+  <div class="uk-margin">
+     <%= form.label(:remote_possible, {}, {class: 'uk-form-label'}) %>
+    <%= form.check_box :remote_possible %>
+  </div>
+
+  
+  <div class="uk-margin">
+      <%= form.submit 'Create Job', :class => "uk-button uk-button-default" %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 
 <p id="notice"><%= notice %></p>
-<h1>Jobs Applied For</h1>
+<h1>Jobs Applied For: <%=@jobs.count%></h1>
 
 <div class="uk-overflow-auto">
   <table class="uk-table uk-table-justify uk-table-divider">
@@ -9,6 +9,7 @@
         <th style="font-size: 1.4em; font-weight: bold">Job title</th>
         <th style="font-size: 1.4em; font-weight: bold">Comment</th>
         <th style="font-size: 1.4em; font-weight: bold">Date applied</th>
+        <th style="font-size: 1.4em; font-weight: bold">Rating</th>
         <th style="font-size: 1.4em; font-weight: bold">Heard back</th>
         <th style="font-size: 1.4em; font-weight: bold">Cover letter used</th>
         <th style="font-size: 1.4em; font-weight: bold">Resume used</th>
@@ -26,6 +27,7 @@
           <td> <a class="uk-text-large" href=<%=job.link %>><%= job.job_title %></a></td>
           <td class="uk-text-large"><%= job.comment %></td>
           <td class="uk-text-large"><%= job.date_applied %></td>
+          <td class="uk-text-large"><%= job.rating %></td>
           <td class="uk-text-large"><%= job.heard_back %></td>
           <td class="uk-text-large"><%= job.cover_letter_used %></td>
           <td class="uk-text-large"><%= job.resume_used %></td>
@@ -58,4 +60,4 @@
 </div>
 <br>
 
-<a class="new" href="/jobs/new"><%= image_tag('Add-32.png') %> New Job</a>
+<a class="new" href="/jobs/new"><%= image_tag('Add-32.png') %> New Job</a><br><br>
