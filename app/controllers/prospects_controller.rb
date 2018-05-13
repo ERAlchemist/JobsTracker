@@ -78,6 +78,6 @@ class ProspectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prospect_params
-      params.require(:prospect).permit(:job_title, :link, :technologies, :location, :listing_site, :comment)
+      params.require(:prospect).permit(:job_title, :link, :technologies, :location, :listing_site, :rating, :comment)
     end
 end
