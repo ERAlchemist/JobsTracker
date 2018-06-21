@@ -16,6 +16,12 @@
     <%= form.text_field :job_title %>
   </div>
 
+
+  <div class="uk-margin">
+    <%= form.label(:company, {}, {class: 'uk-form-label'}) %>
+    <%= form.text_field :company %>
+  </div>
+  
   <div class="uk-margin">
     <%= form.label(:link, {}, {class: 'uk-form-label'}) %>
     <%= form.text_field :link %>

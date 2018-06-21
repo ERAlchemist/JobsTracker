@@ -6,6 +6,7 @@
     <thead>
       <tr>
         <th style="font-size: 2.2em; font-weight: bold">Job title</th>
+        <th style="font-size: 2.2em; font-weight: bold">Company</th>
         <th style="font-size: 2.2em; font-weight: bold">Technologies</th>
         <th style="font-size: 2.2em; font-weight: bold">Location</th>
         <th style="font-size: 2.2em; font-weight: bold">Comment</th>
@@ -19,6 +20,7 @@
       <% @prospects.each do |prospect| %>
         <tr>
           <td><a class="uk-text-large" href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
+          <td class="uk-text-large"><%= prospect.company %></td>
           <td class="uk-text-large"><%= prospect.technologies %></td>
           <td class="uk-text-large"><%= prospect.location %></td>
           <td class="uk-text-large"><%= prospect.comment %></td>
@@ -45,6 +47,7 @@
          
             </td>
         </tr>
+        
       <% end %>
     </tbody>
   </table>

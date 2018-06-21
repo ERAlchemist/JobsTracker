@@ -62,7 +62,7 @@ class ProspectsController < ApplicationController
   end
 
   def move_to_applied
-    @job = Job.new(:job_title => @prospect.job_title, :link => @prospect.link, :comment => @prospect.comment, :technologies => @prospect.technologies, :location => @prospect.location)
+    @job = Job.new(:job_title => @prospect.job_title, :link => @prospect.link, :comment => @prospect.comment, :technologies => @prospect.technologies, :location => @prospect.location, :company => @prospect.company, :rating => @prospect.rating)
 
      @job.save
     @prospect.destroy
@@ -78,6 +78,6 @@ class ProspectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prospect_params
-      params.require(:prospect).permit(:job_title, :link, :technologies, :location, :listing_site, :rating, :comment)
+      params.require(:prospect).permit(:job_title, :company, :link, :technologies, :location, :listing_site, :rating, :comment)
     end
 end

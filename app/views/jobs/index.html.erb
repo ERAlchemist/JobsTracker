@@ -7,6 +7,7 @@
     <thead >
       <tr>
         <th style="font-size: 1.4em; font-weight: bold">Job title</th>
+        <th style="font-size: 1.4em; font-weight: bold">Company</th>
         <th style="font-size: 1.4em; font-weight: bold">Comment</th>
         <th style="font-size: 1.4em; font-weight: bold">Date applied</th>
         <th style="font-size: 1.4em; font-weight: bold">Rating</th>
@@ -25,6 +26,7 @@
       <% @jobs.each do |job| %>
         <tr>
           <td> <a class="uk-text-large" href=<%=job.link %>><%= job.job_title %></a></td>
+          <td class="uk-text-large"><%= job.company %></td>
           <td class="uk-text-large"><%= job.comment %></td>
           <td class="uk-text-large"><%= job.date_applied %></td>
           <td class="uk-text-large"><%= job.rating %></td>
