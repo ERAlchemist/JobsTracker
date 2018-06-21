@@ -13,14 +13,17 @@
   </head>
 
   <body>
-    <nav class="uk-navbar-container">
-      <div class="uk-navbar-center">
+    <nav class="uk-navbar-container" >
+      <div class="uk-navbar-center" style="background-color: #EEE">
         <ul class="uk-navbar-nav">
-          <li><%= link_to 'Jobs', jobs_path %><li>
           <li><%= link_to 'Prospects', prospects_path %><li>
+          <li><%= link_to 'Jobs Applied For', jobs_path %><li>
         </ul>
+        <hr>
       </div>
+       
     </nav>
+   
     <%= yield %>
   
   </body>

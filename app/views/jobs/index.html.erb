@@ -1,45 +1,34 @@
 
 <p id="notice"><%= notice %></p>
-<h1>Jobs Applied For: <%=@jobs.count%></h1>
+<h1 class="uk-heading-primary">Jobs Applied For: <%=@jobs.count%></h1>
 
 <div class="uk-overflow-auto">
-  <table class="uk-table uk-table-justify uk-table-divider">
+  <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
     <thead >
-      <tr>
-        <th style="font-size: 1.4em; font-weight: bold">Job title</th>
-        <th style="font-size: 1.4em; font-weight: bold">Company</th>
-        <th style="font-size: 1.4em; font-weight: bold">Comment</th>
-        <th style="font-size: 1.4em; font-weight: bold">Date applied</th>
-        <th style="font-size: 1.4em; font-weight: bold">Rating</th>
-        <th style="font-size: 1.4em; font-weight: bold">Heard back</th>
-        <th style="font-size: 1.4em; font-weight: bold">Cover letter used</th>
-        <th style="font-size: 1.4em; font-weight: bold">Resume used</th>
-        <th style="font-size: 1.4em; font-weight: bold">Listing site</th>
-        <th style="font-size: 1.4em; font-weight: bold">Technologies</th>
-        <th style="font-size: 1.4em; font-weight: bold">Remote possible</th>
-        <th style="font-size: 1.4em; font-weight: bold">Location</th>
-        <th style="font-size: 1.4em: font-weight: bold"></th>
+      <tr style="background-color: #EEE">
+        
+        <th  style="color: white;">____</th>
+        <th >Title</th>
+        <th >Company</th>
+        <th >Comment</th>
+        <th >Date applied</th>
+        <th >Rating</th>
+        <th >Heard back</th>
+        <th >Cover letter used</th>
+        <th >Resume used</th>
+        <th >Listing site</th>
+        <th >Technologies</th>
+        <th >Remote possible</th>
+        <th >Location</th>
         <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td> <a class="uk-text-large" href=<%=job.link %>><%= job.job_title %></a></td>
-          <td class="uk-text-large"><%= job.company %></td>
-          <td class="uk-text-large"><%= job.comment %></td>
-          <td class="uk-text-large"><%= job.date_applied %></td>
-          <td class="uk-text-large"><%= job.rating %></td>
-          <td class="uk-text-large"><%= job.heard_back %></td>
-          <td class="uk-text-large"><%= job.cover_letter_used %></td>
-          <td class="uk-text-large"><%= job.resume_used %></td>
-          <td class="uk-text-large"><%= job.listing_site %></td>
-          <td class="uk-text-large"><%= job.technologies %></td>
-          <td class="uk-text-large"><%= job.remote_possible %></td>
-          <td class="uk-text-large"><%= job.location %></td>
-          <td>
+          <td >
             
-                <div class="links">
+              <div class="links">
                   <div class="edit" uk-tooltip="title: Edit Details">
                     <%= link_to edit_job_path(job) do %> 
                       <%= image_tag('edit-48.png') %>
@@ -53,6 +42,19 @@
                 </div>
            
            </td>
+          <td> <a class="uk-text-large" href=<%=job.link %>><%= job.job_title %></a></td>
+          <td class="uk-text-large"><%= job.company %></td>
+          <td class="uk-text"><%= job.comment %></td>
+          <td class="uk-text"><%= job.date_applied %></td>
+          <td class="uk-text-large"><%= job.rating %></td>
+          <td class="uk-text"><%= job.heard_back %></td>
+          <td class="uk-text"><%= job.cover_letter_used %></td>
+          <td class="uk-text"><%= job.resume_used %></td>
+          <td class="uk-text"><%= job.listing_site %></td>
+          <td class="uk-text"><%= job.technologies %></td>
+          <td class="uk-text"><%= job.remote_possible %></td>
+          <td class="uk-text"><%= job.location %></td>
+          
         </tr>
       <% end %>
       

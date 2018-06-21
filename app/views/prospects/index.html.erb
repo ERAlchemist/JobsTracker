@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Prospects: <%= @prospects.count %></h1>
+<h1 class="uk-heading-primary">Prospects: <%= @prospects.count %></h1>
 <div class="uk-overflow-auto">
-  <table class="uk-table uk-table-divider">
+  <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
     <thead>
-      <tr>
-        <th style="font-size: 2.2em; font-weight: bold">Job title</th>
-        <th style="font-size: 2.2em; font-weight: bold">Company</th>
-        <th style="font-size: 2.2em; font-weight: bold">Technologies</th>
-        <th style="font-size: 2.2em; font-weight: bold">Location</th>
-        <th style="font-size: 2.2em; font-weight: bold">Comment</th>
-        <th style="font-size: 2.2em; font-weight: bold">Rating</th>
-        <th style="font-size: 2.2em: font-weight: bold"></th>
+      <tr style="background-color: #EEE">
+        <th style="color: white">____</th>
+        <th >Job title</th>
+        <th >Company</th>
+        <th >Technologies</th>
+        <th >Location</th>
+        <th >Comment</th>
+        <th >Rating</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -19,33 +19,32 @@
     <tbody>
       <% @prospects.each do |prospect| %>
         <tr>
-          <td><a class="uk-text-large" href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
-          <td class="uk-text-large"><%= prospect.company %></td>
-          <td class="uk-text-large"><%= prospect.technologies %></td>
-          <td class="uk-text-large"><%= prospect.location %></td>
-          <td class="uk-text-large"><%= prospect.comment %></td>
-          <td class="uk-text-large"><%= prospect.rating %></td>
           <td>
-            
-                <div class="links">
-                  <div class="edit" uk-tooltip="title: Edit Details">
-                    <%= link_to edit_prospect_path(prospect) do %> 
-                      <%= image_tag('edit-48.png') %>
-                    <% end %>
-                  </div>
-                  <div class="trash" uk-tooltip="title: Delete Prospect">
-                    <%= link_to  prospect, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <%= image_tag('trash-48.png') %>
-                    <% end %>
-                  </div>
-                  <div class="apply" uk-tooltip="title: Move to 'Applied For' jobs">
-                    <%= link_to move_to_applied_prospect_path(prospect), method: :patch do %>
-                      <%= image_tag('arrow-48.png')%>
-                    <% end %>
-                  </div>
+              <div class="links">
+                <div class="edit" uk-tooltip="title: Edit Details">
+                  <%= link_to edit_prospect_path(prospect) do %> 
+                    <%= image_tag('edit-48.png') %>
+                  <% end %>
                 </div>
-         
+                <div class="trash" uk-tooltip="title: Delete Prospect">
+                  <%= link_to  prospect, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <%= image_tag('trash-48.png') %>
+                  <% end %>
+                </div>
+                <div class="apply" uk-tooltip="title: Move to 'Applied For' jobs">
+                  <%= link_to move_to_applied_prospect_path(prospect), method: :patch do %>
+                    <%= image_tag('arrow-48.png')%>
+                  <% end %>
+                </div>
+              </div>
             </td>
+          <td><a class="uk-text-large" href='<%= prospect.link %>'> <%= prospect.job_title %></a></td>
+          <td class="uk-text"><%= prospect.company %></td>
+          <td class="uk-text"><%= prospect.technologies %></td>
+          <td class="uk-text"><%= prospect.location %></td>
+          <td class="uk-text"><%= prospect.comment %></td>
+          <td class="uk-text-large"><%= prospect.rating %></td>
+          
         </tr>
         
       <% end %>
